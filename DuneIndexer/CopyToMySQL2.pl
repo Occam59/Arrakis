@@ -9,7 +9,7 @@ use Text::Unidecode;
 use Config::IniFiles;
 my $cfg = Config::IniFiles->new( -file => "IndexDune.ini" );
  
-my $dbfile = 'D:\\\Ember Media Manager\\Media.emm';
+my $dbfile = $cfg->val('ember', 'database');
 my $dbin = DBI->connect("dbi:SQLite:dbname=$dbfile", "", "", {sqlite_unicode => 1});
 
 my $dboutname = $cfg->val('database', 'name');

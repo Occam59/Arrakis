@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <template name="GLASS Revisited" author="Fred-L" version="1.0">
-	<movie type="table" table="Movies" skip="0" rows="10" dir="00\99" subdir="dirname" orderby="DateAdd DESC">
+	<movie type="table" table="Movies" skip="0" rows="10000" dir="00\99" subdir="dirname" orderby="DateAdd DESC">
 		<icon type="image" width="250" height="333">
 			<image type="PosterPath" x="0" y="0" />
 			<mask type="static">cover_mask.png</mask>
@@ -102,7 +102,7 @@
 			<text type="static" font="ScoutCond Bold" size="24" color="#d8d8d8" x="0" y="0"  align="center" >U</text>
 		</icon>
 	</tvicons>
-	<tvshow type="table" table="TVShows4" skip="0" rows="10" dir="01\99" subdir="dirname">
+	<tvshow type="table" table="TVShows4" skip="0" rows="10000" dir="01\99" subdir="dirname">
 		<icon type="image" width="600" height="109" border="0">
 			<image type="PosterPath" x="0" y="0" width="600" height="109" />
 			<mask type="static">banner_mask.png</mask>
