@@ -1,0 +1,67 @@
+To Do
+
+Icons & Images for menus - almost done
+
+Sub-menus - Done
+
+Fix directories with special characters in lists - Done 
+
+Delta processing - Done (could be enhanced for TVShows)
+
+MySQL - Done
+
+Italics - Done
+
+Icons for movie actions - Done
+
+Indexes
+	- Movies
+		- Title x
+		- Release Date x
+		- Rating x
+		- Genres x
+		- Letter x
+		- Actors by Letter
+		- Directors by Letter x
+	- TV Shows
+		- Title x
+		- Last Aired x
+		- Unwatched by Last Aired x
+		- Unwatched by First Unwatched Aired
+		- Unwatched by Oldest Unwatched Aired
+		- Letter x
+		- Actors by Letter
+
+Actors master directories
+- movies
+- TV
+
+Movie icons/subdirectories
+- play - Done
+- actors -Done
+- directors - Done 
+- imdb - Done
+
+TV icons/subdirectories
+- actors - Done
+- unwatched espisodes - Done
+
+Watched
+- get date watched from Boxee - Done
+- script to update watched in DB - Done
+- unwatched menus - Done
+
+- scripts to mark shows/series at watched - Done
+
+Get youtube trailers working
+
+Music
+- add music videos
+- add itunes library
+
+Pictures
+
+Fix Awkward. Done
+
+Fix accents in lists - Done
+

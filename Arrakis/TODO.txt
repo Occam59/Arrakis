@@ -1,0 +1,27 @@
+Configuration screen
+
+- confirmation on stop button - can't do?
+
+- scrolling items not working - new option?
+
+- invalidate parent folders for updating watched
+
+Popup menu
+- Info?
+
+program to generate menu xml - 90%
+
+archive
+
+Views in config object downloaded from web
+
+Play child
+- play first unwatched?
+
+modified times on tables
+ (use poster tables for triggers)?
+ 
+load data from YaDIS option?
+
+script to update has watched in ember db
+

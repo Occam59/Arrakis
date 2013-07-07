@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<template name="GLASS Revisited" author="Fred-L" version="1.0">
+	<menu type="index">
+		<folder type="folder">
+			<backgroundimage type="static">http://192.168.1.86/_dune/StartWatched.php?file=background.aai</backgroundimage>
+			<area type="static" x="0" y="720" width="1920" height="120" iconselectionbox="no" />
+		</folder>
+		<background type="image" width="1920" height="1080">
+			<image type="static" x="0" y="0" >background.jpg</image>
+		</background>
+		<menu type="index" dir="00" name="Movies">
+			<icon type="image" width="1920" height="120">
+				<image type="static" >menubar.png</image>
+ 			    <menutext type="static" font="ScoutCond Bold" size="56" othercolor="#707070" color="#d8d8d8" spacing="20" x="0" y="0" align="center">Movies</menutext>
+			</icon>
+			<background type="image" width="1920" height="1080">
+				<image type="static" x="0" y="0" >background.jpg</image>
+				<image type="output" x="0" y="720" height="120">icon.aai</image>
+			</background>
+			<folder type="folder">
+				<backgroundimage type="static"  systemfiles="97,98,99,*.aai,*.jpg">background.aai</backgroundimage>
+				<area type="static" x="0" y="820" width="1920" height="48" iconselectionbox="no" />
+			</folder>
+			<index type="index" dir="00" name="Title" >
+				<icon type="image" width="1920" height="48">
+					<image type="static" >menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Title</menutext>
+				</icon>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >../../background.aai</backgroundimage>
+					<area type="static" cols="7" rows="3" />
+					<movie type="table" table="Movies" orderby="Title">
+						<item type="dirname" action="browse" prefix="../99/" selscalefactor="1.1" scalefactor="0.85" />
+					</movie>
+				</folder>
+			</index>
+			<index type="index" dir="01" name="Date Added">
+				<icon type="image" width="1920" height="48">
+					<image type="static" >menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Date Added</menutext>
+				</icon>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >../../background.aai</backgroundimage>
+					<area type="static" cols="7" rows="3" />
+					<movie type="table" table="Movies" orderby="DateAdd desc">
+						<item type="dirname" action="browse" prefix="../99/" selscalefactor="1.1" scalefactor="0.85" />
+					</movie>
+				</folder>
+			</index>
+			<index type="index" dir="02" name="Release Date">
+				<icon type="image" width="1920" height="48">
+					<image type="static">menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Release Date</menutext>
+				</icon>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >../../background.aai</backgroundimage>
+					<area type="static" cols="7" rows="3" />
+					<movie type="table" table="Movies" orderby="Substr(ReleaseDate, -4) desc,  Substr(ReleaseDate, -7,  2) desc, abs(ReleaseDate) desc">
+						<item type="dirname" action="browse" prefix="../99/" selscalefactor="1.1" scalefactor="0.85" />
+					</movie>
+				</folder>
+			</index>
+			<index type="index" dir="03" name="Rating">
+				<icon type="image" width="1920" height="48">
+					<image type="static" >menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0"  align="center">Rating</menutext>
+				</icon>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >../background.aai</backgroundimage>
+					<area type="static" cols="7" rows="3" />
+					<movie type="table" table="Movies" orderby="Rating desc">
+						<item type="dirname" action="browse" prefix="../99/" selscalefactor="1.1" scalefactor="0.85" />
+					</movie>
+				</folder>
+			</index>
+			<index type="index" dir="04" name="Genres">
+				<icon type="image" width="1920" height="48">
+					<image type="static" >menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0"  align="center">Genres</menutext>
+				</icon>
+				<background type="image" width="1920" height="1080">
+					<image type="output" x="0" y="0" >../background.aai</image>
+					<image type="output" x="0" y="820" height="48">icon.aai</image>
+					<image type="static" x="0" y="866" height="48">menubar.png</image>
+				</background>
+				<folder type="folder">
+					<backgroundimage type="static" systemfiles="97,98,99,*.aai,*.jpg">background.aai</backgroundimage>
+					<area type="static" x="0" y="866" width="1920" height="48" cols="12" rows="1"  iconselectionbox="yes" />
+				</folder>
+				<index type="table" subdir="Genre" table="MoviesGenres2" width="200" height="48">
+					<icon type="image" >
+		 			    <text type="Genre" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" align="center" />
+					</icon>
+					<icon_sel type="image" >
+		 			    <text type="Genre" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" align="center" />
+					</icon_sel>
+					<folder type="folder">
+						<backgroundimage type="static" iconview="yes" >../../../background.aai</backgroundimage>
+						<iconimage type="static" iconsel="icon_sel.aai" />
+						<area type="static" cols="7" rows="3" />
+						<movie type="table" table="MoviesGenres3" >
+							<item type="dirname" action="browse" prefix="../../99/" selscalefactor="1.1" scalefactor="0.85" />
+						</movie>
+					</folder>
+				</index>
+			</index>
+			<index type="index" dir="05" name="Letter">
+				<icon type="image" width="1920" height="48">
+					<image type="static">menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Letter</menutext>
+				</icon>
+				<background type="image" width="1920" height="1080">
+					<image type="output" x="0" y="0" >../background.aai</image>
+					<image type="output" x="0" y="820" height="48">icon.aai</image>
+					<image type="static" x="0" y="866" height="48">menubar.png</image>
+				</background>
+				<folder type="folder">
+					<backgroundimage type="static" systemfiles="97,98,99,*.aai,*.jpg">background.aai</backgroundimage>
+					<area type="static" x="200" y="866" width="1520" height="48" cols="27" rows="1"  iconselectionbox="yes" />
+				</folder>
+				<index type="table" subdir="Index" format="%02d" table="Alphabet" width="60" height="48">
+					<icon type="image" >
+		 			    <text type="Description" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" align="center" />
+					</icon>
+					<icon_sel type="image" >
+		 			    <text type="Description" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" align="center" />
+					</icon_sel>
+					<folder type="folder">
+						<backgroundimage type="static" iconview="yes" >../background.aai</backgroundimage>
+						<iconimage type="static" iconsel="icon_sel.aai" />
+						<area type="static" cols="7" rows="3" />
+						<movie type="table" table="Movies3" >
+							<item type="dirname" action="browse" prefix="../../99/" selscalefactor="1.1" scalefactor="0.85" />
+						</movie>
+					</folder>
+				</index>
+			</index>
+			<index type="index" dir="06" name="Unwatched" >
+				<icon type="image" width="1920" height="48">
+					<image type="static">menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Unwatched</menutext>
+				</icon>
+				<background type="image" width="1920" height="1080" >
+					<image type="output" x="0" y="0" >../background.aai</image>
+					<image type="output" x="0" y="820" height="48">icon.aai</image>
+					<image type="static" x="0" y="866" height="48">menubar.png</image>
+				</background>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >background.aai</backgroundimage>
+					<area type="static" x="340" y="866" width="1240" height="48" cols="3" rows="1"  iconselectionbox="yes" />
+					<item type="static" action="browse" url="dune_http://192.168.1.86/_dune/GetUnwatchedMovies.php?type=title" icon="Title.aai" iconsel="Title_sel.aai" caption="Title" />
+					<item type="static" action="browse" url="dune_http://192.168.1.86/_dune/GetUnwatchedMovies.php?type=releasedate" icon="ReleaseDate.aai" iconsel="ReleaseDate_sel.aai" caption="Release Date" />
+					<item type="static" action="browse" url="dune_http://192.168.1.86/_dune/GetUnwatchedMovies.php?type=dateadded" icon="DateAdded.aai" iconsel="DateAdded_sel.aai" caption="Date Added" />
+				</folder>
+				<icon type="image" width="200" height="48" name="Title">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center">Title</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="ReleaseDate">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center">Release Date</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="DateAdded">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center">Date Added</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="Title_sel">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center">Title</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="ReleaseDate_sel">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center">Release Date</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="DateAdded_sel">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center">Date Added</text>
+				</icon>
+			</index>
+			<index type="index" dir="07" name="Directors">
+				<icon type="image" width="1920" height="48">
+					<image type="static">menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Directors</menutext>
+				</icon>
+				<background type="image" width="1920" height="1080">
+					<image type="output" x="0" y="0" >../background.aai</image>
+					<image type="output" x="0" y="820" height="48">icon.aai</image>
+					<image type="static" x="0" y="866" height="48">menubar.png</image>
+				</background>
+				<folder type="folder">
+					<backgroundimage type="static" systemfiles="97,98,99,*.aai,*.jpg">background.aai</backgroundimage>
+					<area type="static" x="40" y="866" width="1840" height="48" cols="27" rows="1"  iconselectionbox="yes" />
+					<index type="table" table="Alphabet">
+						<icon type="image" name="Index" format="%02d" width="60" height="48">
+			 			    <text type="Description" font="ScoutCond Bold" size="22" othercolor="#707070" color="#707070" spacing="40" x="0" y="0" width="60" height="48" align="center" />
+						</icon>
+						<item type="Index" action="browse" url="dune_http://192.168.1.86/_dune/GetMovieDirectors.php?index=" icon="Index" format="%02d" caption="Directors" />
+					</index>
+					</folder>
+			</index>
+		</menu>
+		<menu type="index" dir="01" name="TV Shows">
+			<icon type="image" width="1920" height="120">
+				<image type="static" >menubar.png</image>
+ 			    <menutext type="static" font="ScoutCond Bold" size="56" othercolor="#707070" color="#d8d8d8" spacing="20" x="0" y="0" align="center">TV Shows</menutext>
+			</icon>
+			<background type="image" width="1920" height="1080">
+				<image type="static" x="0" y="0" >background.jpg</image>
+				<image type="output" x="0" y="720" height="120">icon.aai</image>
+			</background>
+			<folder type="folder">
+				<backgroundimage type="static"  systemfiles="97,98,99,*.aai,*.jpg">background.aai</backgroundimage>
+				<area type="static" x="0" y="820" width="1920" height="48" iconselectionbox="no" />
+			</folder>
+			<index type="index" dir="00" name="Title" >
+				<icon type="image" width="1920" height="48">
+					<image type="static" >menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Title</menutext>
+				</icon>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >../../background.aai</backgroundimage>
+					<area type="static" cols="3" rows="6" selboxwidth="640" selboxheight="120"/>
+					<movie type="table" table="TVShows" orderby="Title">
+						<item type="dirname" action="browse" prefix="../99/" selscalefactor="1.1" scalefactor="0.85" />
+					</movie>
+				</folder>
+			</index>
+			<index type="index" dir="01" name="Last Aired" >
+				<icon type="image" width="1920" height="48">
+					<image type="static" >menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">LastAired</menutext>
+				</icon>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >../background.aai</backgroundimage>
+					<area type="static" cols="3" rows="6" selboxwidth="640" selboxheight="120"/>
+					<movie type="table" table="TVLASTAIRED" >
+						<item type="dirname" action="browse" prefix="../99/" selscalefactor="1.1" scalefactor="0.85" />
+					</movie>
+				</folder>
+			</index>
+			<index type="index" dir="02" name="Unwatched" >
+				<icon type="image" width="1920" height="48">
+					<image type="static" >menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Unwatched</menutext>
+				</icon>
+				<background type="image" width="1920" height="1080">
+					<image type="output" x="0" y="0" >../background.aai</image>
+					<image type="output" x="0" y="820" height="48">icon.aai</image>
+					<image type="static" x="0" y="866" height="48">menubar.png</image>
+				</background>
+				<folder type="folder">
+					<backgroundimage type="static" iconview="yes" >background.aai</backgroundimage>
+					<area type="static" x="340" y="866" width="1240" height="48" cols="4" rows="1"  iconselectionbox="yes" />
+					<item type="static" action="browse" url="dune_http://192.168.1.86/_dune/GetUnwatchedTVShows.php?type=title" icon="Title.aai" iconsel="Title_sel.aai" caption="Title" />
+					<item type="static" action="browse" url="dune_http://192.168.1.86/_dune/GetUnwatchedTVShows.php?type=lastplayed" icon="LastPlayed.aai" iconsel="LastPlayed_sel.aai" caption="Last Played" />
+					<item type="static" action="browse" url="dune_http://192.168.1.86/_dune/GetUnwatchedTVShows.php?type=recentlyaired" icon="RecentlyAired.aai" iconsel="RecentlyAired_sel.aai" caption="Recently Aired" />
+					<item type="static" action="browse" url="dune_http://192.168.1.86/_dune/GetUnwatchedTVShows.php?type=oldestaired" icon="OldestAired.aai" iconsel="OldestAired_sel.aai" caption="Oldest Aired" />
+				</folder>
+				<icon type="image" width="200" height="48" name="Title">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center">Title</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="LastPlayed">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center">Last Played</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="RecentlyAired">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center">Recently Aired</text>
+				</icon>
+				<icon type="image" width="200" height="48" name="OldestAired">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center">Oldest Aired</text>
+				</icon>
+				<icon_sel type="image" width="200" height="48" name="Title_sel">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center">Title</text>
+				</icon_sel>
+				<icon_sel type="image" width="200" height="48" name="LastPlayed_sel">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center">Last Played</text>
+				</icon_sel>
+				<icon_sel type="image" width="200" height="48" name="RecentlyAired_sel">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center">Recently Aired</text>
+				</icon_sel>
+				<icon_sel type="image" width="200" height="48" name="OldestAired_sel">
+	 			    <text type="static" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center">Oldest Aired</text>
+				</icon_sel>
+			</index>
+			<index type="index" dir="04" name="Genres">
+				<icon type="image" width="1920" height="48">
+					<image type="static">menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Genres</menutext>
+				</icon>
+				<background type="image" width="1920" height="1080">
+					<image type="output" x="0" y="0" >../background.aai</image>
+					<image type="output" x="0" y="820" height="48">icon.aai</image>
+					<image type="static" x="0" y="866" height="48">menubar.png</image>
+				</background>
+				<folder type="folder">
+					<backgroundimage type="static" systemfiles="97,98,99,*.aai,*.jpg">background.aai</backgroundimage>
+					<area type="static" x="0" y="866" width="1920" height="48" cols="12" rows="1"  iconselectionbox="yes" />
+				</folder>
+				<index type="table" subdir="Genre" table="TVShowsGenres2">
+					<icon type="image" width="200" height="48">
+		 			    <text type="Genre" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="200" height="48" align="center" />
+					</icon>
+					<icon_sel type="image" width="200" height="48">
+		 			    <text type="Genre" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="200" height="48" align="center" />
+					</icon_sel>
+					<folder type="folder">
+						<backgroundimage type="static" iconview="yes" >../../../background.aai</backgroundimage>
+						<iconimage type="static" iconsel="icon_sel.aai" />
+						<area type="static" cols="3" rows="6" selboxwidth="640" selboxheight="120"/>
+						<movie type="table" table="TVShowsGenres3" >
+							<item type="dirname" action="browse" prefix="../../99/"  selscalefactor="1.1" scalefactor="0.85" />
+						</movie>
+					</folder>
+				</index>
+			</index>
+			<index type="index" dir="05" name="Letter">
+				<icon type="image" width="1920" height="48">
+					<image type="static">menubar.png</image>
+	 			    <menutext type="static" font="ScoutCond Bold" size="24" othercolor="#707070" color="#d8d8d8" spacing="40" x="0" y="0" align="center">Letter</menutext>
+				</icon>
+				<background type="image" width="1920" height="1080">
+					<image type="output" x="0" y="0" >../background.aai</image>
+					<image type="output" x="0" y="820" height="48">icon.aai</image>
+					<image type="static" x="0" y="866" height="48">menubar.png</image>
+				</background>
+				<folder type="folder">
+					<backgroundimage type="static" systemfiles="97,98,99,*.aai,*.jpg">background.aai</backgroundimage>
+					<area type="static" x="200" y="866" width="1520" height="48" cols="27" rows="1"  iconselectionbox="yes" />
+				</folder>
+				<index type="table" subdir="Index" format="%02d" table="Alphabet">
+					<icon type="image" width="60" height="48">
+		 			    <text type="Description" font="ScoutCond Bold" size="22" color="#707070" x="0" y="0" width="60" height="48" align="center" />
+					</icon>
+					<icon_sel type="image" width="60" height="48">
+		 			    <text type="Description" font="ScoutCond Bold" size="22" color="#d8d8d8" x="0" y="0" width="60" height="48" align="center" />
+					</icon_sel>
+					<folder type="folder">
+						<backgroundimage type="static" iconview="yes" >../../../background.aai</backgroundimage>
+						<iconimage type="static" iconsel="icon_sel.aai" />
+						<area type="static" cols="3" rows="6" selboxwidth="640" selboxheight="120"/>
+						<movie type="table" table="TVShows3" >
+							<item type="dirname" action="browse" prefix="../../99/" selscalefactor="1.1" scalefactor="0.85" />
+						</movie>
+					</folder>
+				</index>
+			</index>
+		</menu>
+	</menu>
+</template>
